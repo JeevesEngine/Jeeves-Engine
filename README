@@ -1,0 +1,4 @@
+#Jeeves Engine
+#Required Languages -> Python 2.5+
+#Required external libraries -> dnspython, paramiko
+#I'll get to this later
