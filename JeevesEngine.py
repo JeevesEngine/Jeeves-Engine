@@ -1,8 +1,12 @@
 #!/usr/bin/python
 
 
+#Copyright Mike Romano & Brett Au 2010
 print """
-The Jeeves Engine is free software: you can redistribute it and/or modify
+
+    Copyright Mike Romano & Brett Au 2010
+
+    The Jeeves Engine is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -15,6 +19,8 @@ The Jeeves Engine is free software: you can redistribute it and/or modify
     You should have received a copy of the GNU General Public License
     along with the Jeeves Engine.  If not, see <http://www.gnu.org/licenses/>.
 """
+
+
 #Functions for Jeeves Engine
 #Use function(variables) to call them respectively
 #JeevesEngine version 1.3
