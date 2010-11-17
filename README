@@ -1,4 +1,19 @@
 #Jeeves Engine
 #Required Languages -> Python 2.5+
+
 #Required external libraries -> dnspython, paramiko
+#If you're using a Debian based systems...use the following:
+#apt-get install python-setuptools
+#apt-get install python-paramiko
+#easy_install -U dnspython
+
+#The Jeeves Engine is designed to provide a lightweight way to monitor systems and have full control over network simulations.  
+#Jeeves can do any of the following:
+
+#Monitor System Services without SNMP
+#Send email or SMS notifications 
+#Run system commands from email/SMS
+#Run scripted network attacks
+#Score a competition
+
 #I'll get to this later
