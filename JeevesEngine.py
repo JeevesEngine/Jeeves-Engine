@@ -50,6 +50,9 @@ ftpDoNotify = 0
 ftp_Check = 0
 ftpFileDoNofiy = 0
 ftpFile_Check = 0
+ADDoNotify = 0
+Ad_Check = 0
+
 
 #HTTP Checker
 def httpCheck(url):
@@ -251,6 +254,19 @@ def popCheck(address, username, password):
 		popDoNotify = 1
 	return popDoNotify
 
+def ADCheck(address, username, password):
+	import ldap, sys, ldap.sasl
+
+	try:
+		con = ldap.initialize(address)
+		con.simple_bind_s(username,password)
+		print "AD OK \n"
+		ADDoNotify = 0
+	except:
+		print "Invalid connection settings or LDAP unavailable"
+		ADDoNotify = 1
+	return ADDoNotify
+
 #System Notification from JeevesNotify 
 def sysNotify(address, fromUser, toUser, password, port, service, status, checkType):
 	import smtplib
@@ -426,4 +442,19 @@ def sshNotify(address, username, password, ssh_Check):
 		ssh_Check = ssh_Check
 
 	return ssh_Check
+
+def ADNotify(address, username, password, AD_Check):
+	
+	#Active Directory
+	status = ADCheck(address,username,password)
+	if status != AD_Check:
+		if status == 0:
+			AD_Check = 0
+		else:
+			AD_Check = sysNotify(notifyAddress, notifyFrom, notifyTo, notifyFromPassword, notifyPort, 'AD', stuats, AD_Check)
+
+	else:
+		AD_Check = AD_Check
+
+	return AD_Check
 
