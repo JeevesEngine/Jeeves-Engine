@@ -427,30 +427,3 @@ def sshNotify(address, username, password, ssh_Check):
 
 	return ssh_Check
 
-import time
-
-while 1:
-	#some temporary variables for notification	
-	time.sleep(5)
-	notifyFrom = 'emailgoeshere'
-	notifyAddress = 'mailservergoeshere'
-	notifyTo = 'emailgoeshere'
-	notifyFromPassword = 'accountpassword'
-	notifyPort = 'mailsendport'
-
-	password = 'test'
-	address = '127.0.0.1'
-	username = 'test'
-	port = '587'
-	getFile = 'test'
-	http_Check = httpNotify('http://127.0.0.1', http_Check)	
-	https_Check = httpsNotify('https://127.0.0.1', https_Check)
-	ftp_Check = ftpNotify( paramters, ftp_Check )
-	ftpFile_Check = ftpFileNotify ( parameters, ftpFile_Check )
-	dns_Check = dnsNotify( parameters, dns_Check)
-	imap_Check = imapNotify( parameters, imap_Check )
-	imapSSL_Check = imapSSLNotify( parameters, imapSSL_Check )
-	pop_Check = popNotify ( parameters, pop_Check )
-	popSSL_Check = popSSLNotify ( parameters, popSSL_Check )
-	ssh_Check = sshNotify ( parameters, ssh_Check )
-	smtp_Check = smtpNotify ( paramaters, smtp_Check )
