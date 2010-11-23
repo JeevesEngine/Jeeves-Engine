@@ -235,8 +235,28 @@ def popCheck(address, username, password):
 		con.pass_(password)
 		score +=100
 		file.write(str(score))
+		print "POP OK <br />"
 	except:
 		file.write(str(score))
 		print "POP FAIL <br />"
 
 
+def ADCheck(address, username, password):
+	import ldap, sys, ldap.sasl
+
+	file = open('score','r')
+	score = file.read()
+	score = int(score)
+	file = open('score','w')
+
+	try:
+		con = ldap.initialize(address)
+		con.simple_bind_s(username,password)
+		print "AD OK <br />"
+		score += 100
+		file.write(str(score)
+		)
+	except:
+		print "AD FAIL <br />"
+		file.write(str(score))
+	
